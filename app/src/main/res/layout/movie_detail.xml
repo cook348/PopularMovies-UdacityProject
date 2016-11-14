@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.cookapps.popularmovies.MovieDetailFragment">
+
+    <data>
+        <variable
+            name="movie"
+            type="com.cookapps.popularmovies.model.Movie" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/scrollView">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/relative_layout">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="@{movie.title}"
+                tools:text="Chappie"
+                android:id="@+id/textView_title"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:padding="16dp"
+                android:background="@color/accent_material_light"
+                android:textColor="#ffffff" />
+
+            <ImageView
+                android:layout_width="120dp"
+                android:layout_height="185dp"
+                android:id="@+id/imageView_detail"
+                android:layout_below="@+id/textView_title"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginTop="8dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginStart="16dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:text="This is a description of the movie.  It has the potential to be really really long.  Much, much longer than this.  Plan accordingly. "
+                android:id="@+id/textView_overview"
+                android:text="@{movie.overview}"
+                android:layout_below="@+id/imageView_detail"
+                android:layout_marginTop="32dp"
+                android:layout_alignLeft="@+id/textView_title"
+                android:layout_alignStart="@+id/textView_title"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="2015"
+                android:id="@+id/textView_date"
+                android:text="@{movie.date}"
+                android:layout_alignTop="@+id/imageView_detail"
+                android:layout_toRightOf="@+id/imageView_detail"
+                android:layout_toEndOf="@+id/imageView_detail"
+                android:layout_marginLeft="48dp"
+                android:layout_marginStart="48dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="10"
+                android:id="@+id/textView_rating"
+                android:text="@{movie.rating}"
+                android:layout_below="@+id/textView_date"
+                android:layout_alignLeft="@+id/textView_date"
+                android:layout_alignStart="@+id/textView_date"
+                android:layout_marginTop="16dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="/10"
+                android:id="@+id/textView_rating_over10"
+                android:text="@string/out_of_10"
+                android:layout_below="@+id/textView_date"
+                android:layout_toRightOf="@+id/textView_rating"
+                android:layout_marginTop="16dp" />
+
+            <View
+                android:id="@+id/view_separator"
+                android:layout_marginTop="16dp"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="#4e4e4e"
+                android:layout_alignLeft="@+id/textView_overview"
+                android:layout_alignStart="@+id/textView_overview"
+                android:layout_below="@+id/textView_overview"
+                android:layout_alignRight="@+id/textView_overview"
+                android:layout_alignEnd="@+id/textView_overview" />
+
+
+            <ListView
+                android:layout_width="wrap_content"
+                android:layout_height="120dp"
+                android:id="@+id/listView_trailers"
+                android:layout_below="@+id/textView"
+                android:layout_alignLeft="@+id/view_separator"
+                android:layout_alignStart="@+id/view_separator"
+                android:layout_alignRight="@+id/view_separator"
+                android:layout_alignEnd="@+id/view_separator"
+                android:layout_marginTop="8dp"
+                android:nestedScrollingEnabled="true" />
+
+            <CheckBox
+                android:button="@android:drawable/btn_star"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/favorite"
+                android:id="@+id/checkBox_favorite"
+                android:layout_below="@+id/textView_rating"
+                android:layout_alignLeft="@+id/textView_rating"
+                android:layout_alignStart="@+id/textView_rating"
+                android:layout_marginTop="16dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/trailers"
+                android:id="@+id/textView"
+                android:layout_alignTop="@+id/view_separator"
+                android:layout_alignLeft="@+id/view_separator"
+                android:layout_alignStart="@+id/view_separator"
+                android:layout_marginTop="8dp" />
+
+            <View
+                android:id="@+id/view_separator_2"
+                android:layout_marginTop="16dp"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="#4e4e4e"
+                android:layout_alignLeft="@+id/textView_overview"
+                android:layout_alignStart="@+id/textView_overview"
+                android:layout_below="@+id/listView_trailers"
+                android:layout_alignRight="@+id/textView_overview"
+                android:layout_alignEnd="@+id/textView_overview" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/reviews"
+                android:id="@+id/textView_reviews"
+                android:layout_below="@+id/view_separator_2"
+                android:layout_alignLeft="@+id/listView_trailers"
+                android:layout_alignStart="@+id/listView_trailers"
+                android:layout_marginTop="8dp" />
+
+            <ListView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/listView_reviews"
+                android:layout_below="@+id/textView_reviews"
+                android:layout_alignLeft="@+id/textView_reviews"
+                android:layout_alignStart="@+id/textView_reviews"
+                android:layout_alignRight="@+id/listView_trailers"
+                android:layout_alignEnd="@+id/listView_trailers"
+                android:layout_marginTop="8dp"
+                android:paddingBottom="16dp" />
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+</layout>

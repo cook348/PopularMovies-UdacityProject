@@ -1,0 +1,37 @@
+<resources>
+    <string name="app_name">Popular Movies</string>
+    <string name="title_activity_detail">DetailActivity</string>
+    <string name="title_activity_settings">Settings</string>
+
+    <!-- Strings related to Settings -->
+    <string name="action_settings">Settings</string>
+
+    <!-- Example General settings -->
+
+    <string-array name="pref_sort_order_list_titles">
+        <item>Most Popular</item>
+        <item>Highest Rating</item>
+        <item>Favorites</item>
+    </string-array>
+    <string-array name="pref_sort_order_list_values">
+        <item>popular</item>
+        <item>top_rated</item>
+        <item>favorites</item>
+    </string-array>
+
+
+    <string name="pref_title_system_sync_settings">System sync settings</string>
+    <string name="pref_title_sort">Movie Sort Order</string>
+    <string name="pref_sort_default">popular</string>
+    <string name="pref_sort_key">sort order</string>
+
+    <string name="out_of_10">/10</string>
+    <string name="favorite">Favorite</string>
+    <string name="trailers">Trailers:</string>
+    <string name="reviews">Reviews:</string>
+    <string name="title_movie_list">Movies</string>
+    <string name="title_movie_detail">Movie Detail</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
